@@ -6,8 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Scenes/Start.unity
+  - enabled: 1
     path: Assets/_Scenes/Staircase.unity
   - enabled: 1
     path: Assets/_Scenes/Sisyphus.unity
   - enabled: 1
     path: Assets/_Scenes/Room.unity
+  - enabled: 1
+    path: Assets/_Scenes/Game Over.unity

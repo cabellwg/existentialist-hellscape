@@ -6,6 +6,7 @@ public class DoorTrigger : MonoBehaviour {
 
 	public Bell bell;
 	public Light roomLight;
+	public AudioSource outsideAudio;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,7 @@ public class DoorTrigger : MonoBehaviour {
 			bell.CloseDoor ();
 			roomLight.intensity = 8;
 			bell.clickCount = 26;
+			outsideAudio.Pause ();
 			gameObject.SetActive (false);
 		}
 	}

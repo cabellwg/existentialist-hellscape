@@ -17,6 +17,14 @@ public class Bell : MonoBehaviour {
 	public GameObject doorTrigger;
 	public GameObject triggerBackToPit;
 
+	public AudioSource bellAudio;
+	public AudioSource doorAudio;
+	public AudioSource outsideAudio;
+	public AudioClip ding;
+	public AudioClip doorOpenNoise;
+	public AudioClip doorCloseNoise;
+	public AudioClip screams;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -28,6 +36,8 @@ public class Bell : MonoBehaviour {
 
 		doorTrigger.SetActive (false);
 		CloseDoor ();
+
+		bellAudio.clip = ding;
 	}
 	
 	// Update is called once per frame
@@ -40,10 +50,10 @@ public class Bell : MonoBehaviour {
 		if (clickCount < 25) {
 			DeLight ();
 		} else if (clickCount == 25) {
-			//sound happens
 			doorTrigger.SetActive (true);
 			OpenDoor ();
-			//the screams of the damned play loudly
+			outsideAudio.clip = screams;
+			outsideAudio.Play ();
 		} else if (clickCount > 25 && clickCount < 50) {
 			DeLight ();
 		} else if (clickCount == 50){
@@ -60,6 +70,9 @@ public class Bell : MonoBehaviour {
 		theDoorLimits.min = 0;
 		theDoorLimits.max = 0;
 		doorHinge.limits = theDoorLimits;
+
+		doorAudio.clip = doorCloseNoise;
+		doorAudio.Play ();
 	}
 	public void OpenDoor()
 	{
@@ -68,11 +81,14 @@ public class Bell : MonoBehaviour {
 		TheDoorSpring.targetPosition = -90;
 		doorHinge.spring = TheDoorSpring;
 		doorHinge.limits = theDoorLimits;
+
+		doorAudio.clip = doorOpenNoise;
+		doorAudio.Play ();
 	}
 	public void DeLight()
 	{
 		clickCount += 1;
-		//make the sound happen
+		bellAudio.Play ();
 		roomLight.intensity -= lightIntensityReductionBy;
 		Debug.Log (clickCount);
 	}

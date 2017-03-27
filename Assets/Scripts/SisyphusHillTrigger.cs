@@ -14,7 +14,7 @@ public class SisyphusHillTrigger : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if (gameObject.name == "Ground" && hillTop.GetComponent<HillTopScript>().hasBeenReached == false) {
             return;
-        } else if (other = boulder.GetComponent<Collider>()) {
+        } else if (other == boulder.GetComponent<Collider>()) {
             boulder.GetComponent<BoulderScript>().ResetPosition();
         }
     }

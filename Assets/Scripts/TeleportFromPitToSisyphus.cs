@@ -7,6 +7,8 @@ public class TeleportFromPitToSisyphus : MonoBehaviour {
 
     public static int i = 0;
 
+
+
     void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Player")) {
             if (i == 0) {

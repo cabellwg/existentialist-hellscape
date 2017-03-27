@@ -12,6 +12,12 @@ public class EndSisyphus : MonoBehaviour {
         boulder = GameObject.Find("Sisyphus boulder");
     }
 
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.O)) {
+            SceneManager.LoadScene("Room");
+        }
+    }
+
     void OnTriggerEnter(Collider other) {
         if (hillTop.GetComponent<HillTopScript>().hasBeenReached && other == boulder.GetComponent<Collider>()) {
             EndScene();

@@ -13,6 +13,8 @@ public class GameStartSequence : MonoBehaviour {
 
     public void RunSequence() {
 
+        TeleportFromPitToSisyphus.i = 0;
+
         titleText.SetActive(false);
 
         StartCoroutine(Sequence());

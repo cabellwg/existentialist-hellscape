@@ -288,6 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 649521829}
   - component: {fileID: 649521828}
+  - component: {fileID: 649521830}
   m_Layer: 0
   m_Name: Teleport to End
   m_TagString: Untagged
@@ -320,6 +321,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &649521830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 649521827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c396077712a144f2baf6cfb22bf4c1f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &695713880 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100004, guid: d0c88ce710da76b4f81d765b4286a4c4, type: 3}
@@ -475,7 +487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1459317136160782, guid: c94f7992f250745b99d8653f0cedb2ff, type: 2}
   spawn: {fileID: 1043159946}
-  ballSpawnDelay: 3
+  ballSpawnDelay: 6
 --- !u!4 &1043159946
 Transform:
   m_ObjectHideFlags: 0
@@ -627,7 +639,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
       propertyPath: movementSettings.JumpForce
-      value: 75
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
       propertyPath: m_TagString
